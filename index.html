@@ -12,7 +12,7 @@
     <header class="bg-emerald-600 text-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold tracking-wide flex items-center gap-2">
-                <i class="fa-solid :fa-utensils"></i> Makro Tarif Defterim
+                <i class="fa-solid fa-utensils"></i> Makro Tarif Defterim
             </h1>
             <button onclick="toggleModal()" class="bg-white text-emerald-600 font-semibold px-4 py-2 rounded-lg shadow hover:bg-emerald-50 transition duration-200 cursor-pointer">
                 <i class="fa-solid fa-plus mr-1"></i> Yeni Tarif Ekle
@@ -24,70 +24,17 @@
         
         <section class="mb-8">
             <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-400 mb-3">Kategoriler</h2>
-            <div class="flex flex-wrap gap-2">
-                <button class="bg-emerald-600 text-white px-4 py-1.5 rounded-full text-sm font-medium shadow-sm cursor-pointer">Tümü</button>
-                <button class="bg-white text-slate-600 border border-slate-200 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-slate-100 cursor-pointer">Kahvaltı</button>
-                <button class="bg-white text-slate-600 border border-slate-200 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-slate-100 cursor-pointer">Ana Yemek</button>
-                <button class="bg-white text-slate-600 border border-slate-200 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-slate-100 cursor-pointer">Aparatif / Ara Öğün</button>
-                <button class="bg-white text-slate-600 border border-slate-200 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-slate-100 cursor-pointer">Tatlı</button>
+            <div id="categoryFilters" class="flex flex-wrap gap-2">
+                <button onclick="filterCategory('Tümü')" class="category-btn bg-emerald-600 text-white px-4 py-1.5 rounded-full text-sm font-medium shadow-sm cursor-pointer">Tümü</button>
+                <button onclick="filterCategory('Kahvaltı')" class="category-btn bg-white text-slate-600 border border-slate-200 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-slate-100 cursor-pointer">Kahvaltı</button>
+                <button onclick="filterCategory('Ana Yemek')" class="category-btn bg-white text-slate-600 border border-slate-200 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-slate-100 cursor-pointer">Ana Yemek</button>
+                <button onclick="filterCategory('Ara Öğün')" class="category-btn bg-white text-slate-600 border border-slate-200 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-slate-100 cursor-pointer">Ara Öğün</button>
+                <button onclick="filterCategory('Tatlı')" class="category-btn bg-white text-slate-600 border border-slate-200 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-slate-100 cursor-pointer">Tatlı</button>
             </div>
         </section>
 
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition duration-200">
-                <div class="p-5">
-                    <div class="flex justify-between items-start mb-3">
-                        <span class="bg-emerald-50 text-emerald-700 text-xs font-semibold px-2.5 py-1 rounded-md">Kahvaltı</span>
-                        <span class="text-slate-700 text-sm font-bold bg-slate-100 px-2 py-0.5 rounded"><i class="fa-solid fa-fire text-orange-500 mr-1"></i>385 kcal</span>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Fıstık Ezmeli Fit Yulaf Lapası</h3>
-                    <p class="text-slate-600 text-sm mb-4 line-clamp-3">Yulafı süt ile pişirin. Üzerine muz dilimleri, fıstık ezmesi ve chia tohumu ekleyerek servis yapın.</p>
-                    
-                    <div class="grid grid-cols-3 gap-2 pt-4 border-t border-slate-100 text-center text-xs">
-                        <div class="bg-blue-50 p-2 rounded">
-                            <span class="block text-slate-500 font-medium">Protein</span>
-                            <span class="font-bold text-blue-700 text-sm">15g</span>
-                        </div>
-                        <div class="bg-amber-50 p-2 rounded">
-                            <span class="block text-slate-500 font-medium">Karbonh.</span>
-                            <span class="font-bold text-amber-700 text-sm">45g</span>
-                        </div>
-                        <div class="bg-rose-50 p-2 rounded">
-                            <span class="block text-slate-500 font-medium">Yağ</span>
-                            <span class="font-bold text-rose-700 text-sm">12g</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition duration-200">
-                <div class="p-5">
-                    <div class="flex justify-between items-start mb-3">
-                        <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-1 rounded-md">Ana Yemek</span>
-                        <span class="text-slate-700 text-sm font-bold bg-slate-100 px-2 py-0.5 rounded"><i class="fa-solid fa-fire text-orange-500 mr-1"></i>420 kcal</span>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Izgara Tavuklu Kinoa Salatası</h3>
-                    <p class="text-slate-600 text-sm mb-4 line-clamp-3">Haşlanmış kinoa, ızgara tavuk göğsü, Akdeniz yeşillikleri ve zeytinyağı-limon sosu ile harmanlayın.</p>
-                    
-                    <div class="grid grid-cols-3 gap-2 pt-4 border-t border-slate-100 text-center text-xs">
-                        <div class="bg-blue-50 p-2 rounded">
-                            <span class="block text-slate-500 font-medium">Protein</span>
-                            <span class="font-bold text-blue-700 text-sm">40g</span>
-                        </div>
-                        <div class="bg-amber-50 p-2 rounded">
-                            <span class="block text-slate-500 font-medium">Karbonh.</span>
-                            <span class="font-bold text-amber-700 text-sm">30g</span>
-                        </div>
-                        <div class="bg-rose-50 p-2 rounded">
-                            <span class="block text-slate-500 font-medium">Yağ</span>
-                            <span class="font-bold text-rose-700 text-sm">10g</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
+        <section id="recipeGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            </section>
     </main>
 
     <div id="recipeModal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
@@ -97,31 +44,31 @@
                 <button onclick="toggleModal()" class="text-white hover:text-emerald-100 cursor-pointer text-xl">&times;</button>
             </div>
             
-            <form class="p-6 space-y-4">
+            <form id="recipeForm" class="p-6 space-y-4" onsubmit="saveRecipe(event)">
                 <div>
                     <label class="block text-sm font-medium text-slate-700 mb-1">Tarif Adı</label>
-                    <input type="text" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-emerald-500" placeholder="Örn: Fırında Somon">
+                    <input type="text" id="recipeName" required class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-emerald-500" placeholder="Örn: Fırında Somon">
                 </div>
                 
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label class="block text-sm font-medium text-slate-700 mb-1">Kategori</label>
-                        <select class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:border-emerald-500">
-                            <option>Kahvaltı</option>
-                            <option>Ana Yemek</option>
-                            <option>Aparatif / Ara Öğün</option>
-                            <option>Tatlı</option>
+                        <select id="recipeCategory" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:border-emerald-500">
+                            <option value="Kahvaltı">Kahvaltı</option>
+                            <option value="Ana Yemek">Ana Yemek</option>
+                            <option value="Ara Öğün">Ara Öğün</option>
+                            <option value="Tatlı">Tatlı</option>
                         </select>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-slate-700 mb-1">Kalori (kcal)</label>
-                        <input type="number" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-emerald-500" placeholder="0">
+                        <input type="number" id="recipeCalories" required class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-emerald-500" placeholder="0">
                     </div>
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-slate-700 mb-1">Tarif Yapılışı</label>
-                    <textarea rows="3" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-emerald-500" placeholder="Tarif adımlarını buraya yazın..."></textarea>
+                    <textarea id="recipeInstructions" rows="3" required class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-emerald-500" placeholder="Tarif adımlarını buraya yazın..."></textarea>
                 </div>
 
                 <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
@@ -129,28 +76,153 @@
                     <div class="grid grid-cols-3 gap-3">
                         <div>
                             <label class="block text-xs text-slate-600 mb-1">Protein</label>
-                            <input type="number" class="w-full border border-slate-300 rounded-lg px-2 py-1.5 text-sm focus:outline-none focus:border-emerald-500" placeholder="0g">
+                            <input type="number" id="recipeProtein" required class="w-full border border-slate-300 rounded-lg px-2 py-1.5 text-sm focus:outline-none focus:border-emerald-500" placeholder="0g">
                         </div>
                         <div>
                             <label class="block text-xs text-slate-600 mb-1">Karbonh.</label>
-                            <input type="number" class="w-full border border-slate-300 rounded-lg px-2 py-1.5 text-sm focus:outline-none focus:border-emerald-500" placeholder="0g">
+                            <input type="number" id="recipeCarbs" required class="w-full border border-slate-300 rounded-lg px-2 py-1.5 text-sm focus:outline-none focus:border-emerald-500" placeholder="0g">
                         </div>
                         <div>
                             <label class="block text-xs text-slate-600 mb-1">Yağ</label>
-                            <input type="number" class="w-full border border-slate-300 rounded-lg px-2 py-1.5 text-sm focus:outline-none focus:border-emerald-500" placeholder="0g">
+                            <input type="number" id="recipeFat" required class="w-full border border-slate-300 rounded-lg px-2 py-1.5 text-sm focus:outline-none focus:border-emerald-500" placeholder="0g">
                         </div>
                     </div>
                 </div>
 
                 <div class="flex justify-end gap-2 pt-2">
                     <button type="button" onclick="toggleModal()" class="px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 rounded-lg cursor-pointer">İptal</button>
-                    <button type="button" class="px-4 py-2 text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg shadow cursor-pointer">Kaydet</button>
+                    <button type="submit" class="px-4 py-2 text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg shadow cursor-pointer">Kaydet</button>
                 </div>
             </form>
         </div>
     </div>
 
     <script>
+        // Başlangıçta test etmek için örnek tarifler (Eğer hafıza boşsa yüklenecek)
+        const defaultRecipes = [
+            { id: 1, name: "Fıstık Ezmeli Fit Yulaf Lapası", category: "Kahvaltı", calories: 385, instructions: "Yulafı süt ile pişirin. Üzerine muz dilimleri, fıstık ezmesi ve chia tohumu ekleyin.", protein: 15, carbs: 45, fat: 12 },
+            { id: 2, name: "Izgara Tavuklu Kinoa Salatası", category: "Ana Yemek", calories: 420, instructions: "Haşlanmış kinoa, ızgara tavuk göğsü ve Akdeniz yeşilliklerini soslayıp harmanlayın.", protein: 40, carbs: 30, fat: 10 },
+            { id: 3, name: "Kakaolu Fit Toplar", category: "Tatlı", calories: 180, instructions: "Hurma, ceviz ve kakaoyu mutfak robotundan çekip yuvarlayın.", protein: 4, carbs: 22, fat: 8 }
+        ];
+
+        // Tarayıcı hafızasından verileri al, yoksa varsayılanları yükle
+        let recipes = JSON.parse(localStorage.getItem('myRecipes')) || defaultRecipes;
+        let currentCategory = "Tümü";
+
+        // Sayfa ilk açıldığında tarifleri listele
+        document.addEventListener("DOMContentLoaded", () => {
+            renderRecipes();
+        });
+
+        // Tarif Kartlarını Ekrana Basan Fonksiyon
+        function renderRecipes() {
+            const grid = document.getElementById('recipeGrid');
+            grid.innerHTML = ""; // Önce içini temizle
+
+            // Seçili kategoriye göre filtrele
+            const filteredRecipes = currentCategory === "Tümü" 
+                ? recipes 
+                : recipes.filter(r => r.category === currentCategory);
+
+            if (filteredRecipes.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-slate-400">Bu kategoride henüz bir tarif eklemediniz.</div>`;
+                return;
+            }
+
+            // Filtrelenmiş her bir tarifi karta dönüştür
+            filteredRecipes.forEach(recipe => {
+                // Kategori renkleri şık dursun diye dinamik ayarlıyoruz
+                let catColor = "bg-emerald-50 text-emerald-700";
+                if(recipe.category === "Ana Yemek") catColor = "bg-blue-50 text-blue-700";
+                if(recipe.category === "Ara Öğün") catColor = "bg-amber-50 text-amber-700";
+                if(recipe.category === "Tatlı") catColor = "bg-purple-50 text-purple-700";
+
+                const card = `
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition duration-200 flex flex-col justify-between">
+                        <div class="p-5">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="${catColor} text-xs font-semibold px-2.5 py-1 rounded-md">${recipe.category}</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-slate-700 text-sm font-bold bg-slate-100 px-2 py-0.5 rounded"><i class="fa-solid fa-fire text-orange-500 mr-1"></i>${recipe.calories} kcal</span>
+                                    <button onclick="deleteRecipe(${recipe.id})" class="text-slate-300 hover:text-rose-500 cursor-pointer transition text-sm"><i class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">${recipe.name}</h3>
+                            <p class="text-slate-600 text-sm mb-4 whitespace-pre-line">${recipe.instructions}</p>
+                        </div>
+                        
+                        <div class="px-5 pb-5">
+                            <div class="grid grid-cols-3 gap-2 pt-4 border-t border-slate-100 text-center text-xs">
+                                <div class="bg-blue-50/70 p-2 rounded">
+                                    <span class="block text-slate-500 font-medium">Protein</span>
+                                    <span class="font-bold text-blue-700 text-sm">${recipe.protein}g</span>
+                                </div>
+                                <div class="bg-amber-50/70 p-2 rounded">
+                                    <span class="block text-slate-500 font-medium">Karbonh.</span>
+                                    <span class="font-bold text-amber-700 text-sm">${recipe.carbs}g</span>
+                                </div>
+                                <div class="bg-rose-50/70 p-2 rounded">
+                                    <span class="block text-slate-500 font-medium">Yağ</span>
+                                    <span class="font-bold text-rose-700 text-sm">${recipe.fat}g</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += card;
+            });
+        }
+
+        // Kategori Değiştirme Fonksiyonu
+        function filterCategory(categoryName) {
+            currentCategory = categoryName;
+            
+            // Butonların aktiflik durumunu (renklerini) güncelle
+            const buttons = document.querySelectorAll('.category-btn');
+            buttons.forEach(btn => {
+                if (btn.innerText === categoryName) {
+                    btn.className = "category-btn bg-emerald-600 text-white px-4 py-1.5 rounded-full text-sm font-medium shadow-sm cursor-pointer";
+                } else {
+                    btn.className = "category-btn bg-white text-slate-600 border border-slate-200 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-slate-100 cursor-pointer";
+                }
+            });
+
+            renderRecipes(); // Kartları yeniden filtreleyerek çiz
+        }
+
+        // Yeni Tarifi Kaydetme Fonksiyonu
+        function saveRecipe(event) {
+            event.preventDefault(); // Sayfanın yenilenmesini engelle
+
+            const newRecipe = {
+                id: Date.now(), // Benzersiz bir ID oluşturmak için zaman damgası
+                name: document.getElementById('recipeName').value,
+                category: document.getElementById('recipeCategory').value,
+                calories: parseInt(document.getElementById('recipeCalories').value),
+                instructions: document.getElementById('recipeInstructions').value,
+                protein: parseInt(document.getElementById('recipeProtein').value),
+                carbs: parseInt(document.getElementById('recipeCarbs').value),
+                fat: parseInt(document.getElementById('recipeFat').value)
+            };
+
+            recipes.push(newRecipe); // Listeye ekle
+            localStorage.setItem('myRecipes', JSON.stringify(recipes)); // Hafızaya kaydet
+            
+            document.getElementById('recipeForm').reset(); // Formu temizle
+            toggleModal(); // Pencereyi kapat
+            renderRecipes(); // Listeyi güncelle
+        }
+
+        // Tarif Silme Fonksiyonu
+        function deleteRecipe(id) {
+            if(confirm("Bu tarifi silmek istediğinize emin misiniz?")) {
+                recipes = recipes.filter(r => r.id !== id);
+                localStorage.setItem('myRecipes', JSON.stringify(recipes));
+                renderRecipes();
+            }
+        }
+
+        // Modal Açma/Kapatma
         function toggleModal() {
             const modal = document.getElementById('recipeModal');
             if (modal.classList.contains('hidden')) {
