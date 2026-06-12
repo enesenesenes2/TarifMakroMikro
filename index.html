@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makro Tarif Defterim</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 font-sans text-slate-800">
+
+    <header class="bg-emerald-600 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-wide flex items-center gap-2">
+                <i class="fa-solid :fa-utensils"></i> Makro Tarif Defterim
+            </h1>
+            <button onclick="toggleModal()" class="bg-white text-emerald-600 font-semibold px-4 py-2 rounded-lg shadow hover:bg-emerald-50 transition duration-200 cursor-pointer">
+                <i class="fa-solid fa-plus mr-1"></i> Yeni Tarif Ekle
+            </button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        
+        <section class="mb-8">
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-400 mb-3">Kategoriler</h2>
+            <div class="flex flex-wrap gap-2">
+                <button class="bg-emerald-600 text-white px-4 py-1.5 rounded-full text-sm font-medium shadow-sm cursor-pointer">Tümü</button>
+                <button class="bg-white text-slate-600 border border-slate-200 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-slate-100 cursor-pointer">Kahvaltı</button>
+                <button class="bg-white text-slate-600 border border-slate-200 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-slate-100 cursor-pointer">Ana Yemek</button>
+                <button class="bg-white text-slate-600 border border-slate-200 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-slate-100 cursor-pointer">Aparatif / Ara Öğün</button>
+                <button class="bg-white text-slate-600 border border-slate-200 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-slate-100 cursor-pointer">Tatlı</button>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition duration-200">
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="bg-emerald-50 text-emerald-700 text-xs font-semibold px-2.5 py-1 rounded-md">Kahvaltı</span>
+                        <span class="text-slate-700 text-sm font-bold bg-slate-100 px-2 py-0.5 rounded"><i class="fa-solid fa-fire text-orange-500 mr-1"></i>385 kcal</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Fıstık Ezmeli Fit Yulaf Lapası</h3>
+                    <p class="text-slate-600 text-sm mb-4 line-clamp-3">Yulafı süt ile pişirin. Üzerine muz dilimleri, fıstık ezmesi ve chia tohumu ekleyerek servis yapın.</p>
+                    
+                    <div class="grid grid-cols-3 gap-2 pt-4 border-t border-slate-100 text-center text-xs">
+                        <div class="bg-blue-50 p-2 rounded">
+                            <span class="block text-slate-500 font-medium">Protein</span>
+                            <span class="font-bold text-blue-700 text-sm">15g</span>
+                        </div>
+                        <div class="bg-amber-50 p-2 rounded">
+                            <span class="block text-slate-500 font-medium">Karbonh.</span>
+                            <span class="font-bold text-amber-700 text-sm">45g</span>
+                        </div>
+                        <div class="bg-rose-50 p-2 rounded">
+                            <span class="block text-slate-500 font-medium">Yağ</span>
+                            <span class="font-bold text-rose-700 text-sm">12g</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition duration-200">
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-1 rounded-md">Ana Yemek</span>
+                        <span class="text-slate-700 text-sm font-bold bg-slate-100 px-2 py-0.5 rounded"><i class="fa-solid fa-fire text-orange-500 mr-1"></i>420 kcal</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Izgara Tavuklu Kinoa Salatası</h3>
+                    <p class="text-slate-600 text-sm mb-4 line-clamp-3">Haşlanmış kinoa, ızgara tavuk göğsü, Akdeniz yeşillikleri ve zeytinyağı-limon sosu ile harmanlayın.</p>
+                    
+                    <div class="grid grid-cols-3 gap-2 pt-4 border-t border-slate-100 text-center text-xs">
+                        <div class="bg-blue-50 p-2 rounded">
+                            <span class="block text-slate-500 font-medium">Protein</span>
+                            <span class="font-bold text-blue-700 text-sm">40g</span>
+                        </div>
+                        <div class="bg-amber-50 p-2 rounded">
+                            <span class="block text-slate-500 font-medium">Karbonh.</span>
+                            <span class="font-bold text-amber-700 text-sm">30g</span>
+                        </div>
+                        <div class="bg-rose-50 p-2 rounded">
+                            <span class="block text-slate-500 font-medium">Yağ</span>
+                            <span class="font-bold text-rose-700 text-sm">10g</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <div id="recipeModal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-xl shadow-xl w-full max-w-lg mx-4 overflow-hidden transform scale-95 transition-transform duration-300">
+            <div class="bg-emerald-600 text-white px-6 py-4 flex justify-between items-center">
+                <h3 class="font-bold text-lg">Yeni Tarif Ekle</h3>
+                <button onclick="toggleModal()" class="text-white hover:text-emerald-100 cursor-pointer text-xl">&times;</button>
+            </div>
+            
+            <form class="p-6 space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Tarif Adı</label>
+                    <input type="text" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-emerald-500" placeholder="Örn: Fırında Somon">
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Kategori</label>
+                        <select class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:border-emerald-500">
+                            <option>Kahvaltı</option>
+                            <option>Ana Yemek</option>
+                            <option>Aparatif / Ara Öğün</option>
+                            <option>Tatlı</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Kalori (kcal)</label>
+                        <input type="number" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-emerald-500" placeholder="0">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Tarif Yapılışı</label>
+                    <textarea rows="3" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-emerald-500" placeholder="Tarif adımlarını buraya yazın..."></textarea>
+                </div>
+
+                <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                    <span class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">Makro Besinler (Gram)</span>
+                    <div class="grid grid-cols-3 gap-3">
+                        <div>
+                            <label class="block text-xs text-slate-600 mb-1">Protein</label>
+                            <input type="number" class="w-full border border-slate-300 rounded-lg px-2 py-1.5 text-sm focus:outline-none focus:border-emerald-500" placeholder="0g">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-slate-600 mb-1">Karbonh.</label>
+                            <input type="number" class="w-full border border-slate-300 rounded-lg px-2 py-1.5 text-sm focus:outline-none focus:border-emerald-500" placeholder="0g">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-slate-600 mb-1">Yağ</label>
+                            <input type="number" class="w-full border border-slate-300 rounded-lg px-2 py-1.5 text-sm focus:outline-none focus:border-emerald-500" placeholder="0g">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-end gap-2 pt-2">
+                    <button type="button" onclick="toggleModal()" class="px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 rounded-lg cursor-pointer">İptal</button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg shadow cursor-pointer">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleModal() {
+            const modal = document.getElementById('recipeModal');
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    modal.querySelector('.transform').classList.remove('scale-95');
+                }, 10);
+            } else {
+                modal.classList.add('opacity-0');
+                modal.querySelector('.transform').classList.add('scale-95');
+                setTimeout(() => modal.classList.add('hidden'), 300);
+            }
+        }
+    </script>
+</body>
+</html>
